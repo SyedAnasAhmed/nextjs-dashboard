@@ -12,8 +12,9 @@ import {
 } from "@chakra-ui/react";
 import { Avatar } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import { faBlackboard } from "@fortawesome/free-solid-svg-icons";
 import Sidebarlinks from "./Sidebarlinks";
+import WorkspacesDropdown from "./workspacesDropdown";
+import LaunchpadDropdown from "./LaunchpadDropdown";
 
 function Sidebar() {
   return (
@@ -77,10 +78,41 @@ function Sidebar() {
           Invited
         </Button>
       </Box>
-      <Box bg="#EBF0FA" mt={2} borderRadius="md" height="50vh">
-        <Box height="30%" pt={2}>
-          <Sidebarlinks/>
-        </Box>
+      <Box
+        bg="#EBF0FA"
+        mt={2}
+        maxH={"50vh"}
+        overflowY="auto"
+        borderRadius="md"
+        height="50vh"
+        sx={{
+          /* Custom scrollbar styling */
+          "&::-webkit-scrollbar": {
+            width: "6px", // Set the width of the scrollbar
+          },
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "#5876B7", // Thumb color
+            borderRadius: "10px", // Round the corners of the thumb
+          },
+          "&::-webkit-scrollbar-thumb:hover": {
+            backgroundColor: "#485b94", // Change color on hover
+          },
+          "&::-webkit-scrollbar-track": {
+            backgroundColor: "#f1f1f1", // Scrollbar background color
+          },
+        }}
+      >
+        <Flex flexDirection="column">
+          <Box height="30%" pt={2}>
+            <Sidebarlinks />
+          </Box>
+          <Box>
+            <WorkspacesDropdown />
+          </Box>
+          <Box>
+            <LaunchpadDropdown />
+          </Box>
+        </Flex>
       </Box>
     </Box>
   );

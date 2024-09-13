@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { AbsoluteCenter, Box, Divider, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 
 function Sidebarlinks() {
@@ -63,6 +63,9 @@ function Sidebarlinks() {
             Emails
           </Text>
         </Flex>
+      </Box>
+      <Box mx="10px">
+        <Divider borderColor="#DADAD7" />
       </Box>
     </Box>
   );
