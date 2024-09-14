@@ -29,8 +29,9 @@ function Sidebar() {
         height="70px"
         backgroundColor="#F4F6FA"
         color="white"
-        alignItems="center"
         zIndex="1000"
+        alignItems="center" 
+        transition="left 0.3s"
         p={4}
         justifyContent="space-between"
       >
@@ -42,7 +43,6 @@ function Sidebar() {
         </Button>
       </Box>
 
-      {/* Sidebar Box */}
       <Box
         position="fixed"
         left={isSidebarVisible ? 0 : "-300px"} 
@@ -51,14 +51,15 @@ function Sidebar() {
         width="300px"
         color="white"
         p={4}
+        zIndex="1001"
         backgroundColor={"#F4F6FA"}
         transition="left 0.3s ease"
         sx={{
-          "@media (max-width: 769px)": {
+          "@media (max-width: 650px)": {
             width: "270px",
           },
-          "@media (max-width: 750px)": {
-            left: isSidebarVisible ? "0" : "-300px", // Hide on small screens
+          "@media (max-width: 650px)": {
+            left: isSidebarVisible ? "0" : "-300px",  
           },
         }}
       >
@@ -117,6 +118,7 @@ function Sidebar() {
           mt={2}
           maxH={"45vh"}
           overflowY="auto"
+          overflowX="hidden"
           borderRadius="md"
           sx={{
             "&::-webkit-scrollbar": {

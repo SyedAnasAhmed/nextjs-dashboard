@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import ProgressBar from "./progressBar";
 
-function Maincard() {
+function Maincard(props) {
   return (
     <Box
       width="364px"
@@ -16,14 +16,14 @@ function Maincard() {
       <Box>
         <Flex justify="space-between">
           <Text className="bold" fontSize="14px">
-            Make an E-Commerce Website for a brand store
+            {props.cardtitle}
           </Text>
           <SettingsIcon></SettingsIcon>
         </Flex>
       </Box>
       <Box>
         <Text pt={2} className="light" fontSize="12px" color="#707066">
-          Web
+          {props.domain}
         </Text>
       </Box>
       <Box>
@@ -39,7 +39,7 @@ function Maincard() {
           fontSize={"12px"}
           display={"inline-block"}
         >
-          Ongoing
+          {props.status}
         </Text>
         <br />
         <Text
@@ -52,12 +52,12 @@ function Maincard() {
           fontSize={"12px"}
           display={"inline-block"}
         >
-          Next Milestone: 4-Dec-24
+          Next Milestone: {props.date}
         </Text>
       </Box>
 
-      <Box position="absolute" bottom="5%">
-        <Flex justify="space-between" gap={12} alignItems="flex-end">
+      <Box  mt={"25px"} >
+        <Flex justify="space-between" gap={10} alignItems="flex-end">
           <Text className="bold" fontSize={"14px"}>
             Follow up with the manager
           </Text>

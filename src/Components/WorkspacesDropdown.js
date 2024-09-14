@@ -33,7 +33,7 @@ function WorkspacesDropdown() {
           )}
           <Box>
             <Flex flexDirection={"row"} alignItems={"center"} justifyContent={"space-evenly"} gap={2} >
-              <Text color="#707066" className="normal"  _hover={{ color: "black", cursor: "pointer" }} fontSize="14px" ml={2}>
+              <Text color="#707066" className="normal"  _hover={{ color: "black", cursor: "pointer" }}   fontSize="14px" ml={2}>
                 WORKSPACES
               </Text>
               <Text
