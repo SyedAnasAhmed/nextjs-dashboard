@@ -44,22 +44,27 @@ function Sidebarlinks() {
       >
         <Flex ml={2} justify="flex-start" alignItems="center">
           <img src="/images/Vector.png" />
-          <Text className="normal" color="#707066" mt={2} ml={2}>
+          <Text
+            className="normal"
+            color="#707066"
+            mt={2}
+            _hover={{ color: "black", cursor: "pointer" }}
+            ml={2}
+          >
             Client History
           </Text>
         </Flex>
       </Box>
-      <Box
-        width="256px"
-        // bgColor="white"
-        margin="auto"
-        borderRadius="sm"
-        height="36px"
-        mt={2}
-      >
+      <Box width="256px" margin="auto" borderRadius="sm" height="36px" mt={2}>
         <Flex ml={2} justify="flex-start" alignItems="center">
           <img src="/images/Vector.png" />
-          <Text className="normal" color="#707066" mt={2} ml={2}>
+          <Text
+            className="normal"
+            _hover={{ color: "black", cursor: "pointer" }}
+            color="#707066"
+            mt={2}
+            ml={2}
+          >
             Emails
           </Text>
         </Flex>
