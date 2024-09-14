@@ -13,21 +13,46 @@ import {
 import { Avatar } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import Sidebarlinks from "./Sidebarlinks";
-import WorkspacesDropdown from "./workspacesDropdown";
+import WorkspacesDropdown from "./WorkspacesDropdown";
 import LaunchpadDropdown from "./LaunchpadDropdown";
+import PinnedProjects from "./PinnedProjects";
+import { useState } from "react";
 
 function Sidebar() {
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const toggleSidebar = () => setIsSidebarVisible(!isSidebarVisible);
+
   return (
     <Box
       position="fixed"
-      left={0}
+      left={isSidebarVisible ? 0 : "-300px"}
       top={0}
       height="100vh"
       width="300px"
       color="white"
       p={4}
       backgroundColor={"#F4F6FA"}
+      sx={{
+        "@media (max-width: 769px)": {
+          width: "270px",
+        },
+        "@media (max-width: 750px)": {
+          left: isSidebarVisible ? "0" : "-300px",
+        },
+      }}
     >
+      <Box
+        display={{ base: "block", md: "none" }}
+        position="fixed"
+        top="10px"
+        left="10px"
+        zIndex="1000"
+      >
+        <Button onClick={toggleSidebar} backgroundColor="#5876B7" color="white">
+          {isSidebarVisible ? "Close" : "Open"} Sidebar
+        </Button>
+      </Box>
+
       <Box height="8vh">
         <img src="/images/mudirrlogo.png" />
       </Box>
@@ -81,24 +106,22 @@ function Sidebar() {
       <Box
         bg="#EBF0FA"
         mt={2}
-        maxH={"50vh"}
+        maxH={"45vh"}
         overflowY="auto"
         borderRadius="md"
-        height="50vh"
         sx={{
-          /* Custom scrollbar styling */
           "&::-webkit-scrollbar": {
-            width: "6px", // Set the width of the scrollbar
+            width: "6px",
           },
           "&::-webkit-scrollbar-thumb": {
-            backgroundColor: "#5876B7", // Thumb color
-            borderRadius: "10px", // Round the corners of the thumb
+            backgroundColor: "#5876B7",
+            borderRadius: "10px",
           },
           "&::-webkit-scrollbar-thumb:hover": {
-            backgroundColor: "#485b94", // Change color on hover
+            backgroundColor: "#485b94",
           },
           "&::-webkit-scrollbar-track": {
-            backgroundColor: "#f1f1f1", // Scrollbar background color
+            backgroundColor: "#f1f1f1",
           },
         }}
       >
@@ -113,6 +136,51 @@ function Sidebar() {
             <LaunchpadDropdown />
           </Box>
         </Flex>
+      </Box>
+      <Box
+        sx={{
+          "@media (min-width: 1600px)": {
+            display: "block",
+          },
+          "@media (max-width: 1599px)": {
+            display: "none",
+          },
+        }}
+        height="10%"
+        mt={5}
+      >
+        <PinnedProjects />
+      </Box>
+      <Box
+        mt={8}
+        sx={{
+          "@media (min-width: 1600px)": {
+            display: "block",
+            bottom: "2%",
+            mt: "10",
+          },
+        }}
+      >
+        <Box mt={2}>
+          <Flex justifyContent="flex-start" alignItems="center" ml={5}>
+            <Box mr="10px">
+              <img src="/images/vector.png" alt="logo" boxSize="20px" />
+            </Box>
+            <Text color="#3C3C34" fontSize="14px">
+              Account Settings
+            </Text>
+          </Flex>
+        </Box>
+        <Box mt={2}>
+          <Flex justifyContent="flex-start" alignItems="center" ml={5}>
+            <Box mr="10px">
+              <img src="/images/vector.png" alt="logo" boxSize="20px" />
+            </Box>
+            <Text color="#3C3C34" fontSize="14px">
+              Logout
+            </Text>
+          </Flex>
+        </Box>
       </Box>
     </Box>
   );
