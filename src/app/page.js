@@ -18,7 +18,7 @@ export default function Home() {
       <Box
         ml={{ base: "10px", md: "340px" }}
         mt={{ base: "100px", md: "56px" }}
-        mr={{md:"85px"}}
+        mr={{ md: "85px" }}
         mb="60px"
       >
         <Box>
@@ -59,12 +59,12 @@ export default function Home() {
           </Flex>
         </Box>
 
-        <Box mb={10} >
+        <Box mb={10}>
           <Projstatus />
         </Box>
 
         <Box>
-          <Flex flexWrap="wrap" gap={{md:"55px" , base:"20px"}}  >
+          <Flex flexWrap="wrap" gap={{ md: "55px", base: "20px" }}>
             <Maincard
               cardtitle="Make an E-Commerce Website for a Brand Store"
               domain="Web"
@@ -99,7 +99,7 @@ export default function Home() {
         </Box>
 
         <Box>
-          <Footer/>
+          <Footer />
         </Box>
       </Box>
     </>
