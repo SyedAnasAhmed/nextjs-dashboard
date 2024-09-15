@@ -3,6 +3,7 @@ import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import ProgressBar from "./progressBar";
+import { easeInOut } from "framer-motion";
 
 function Maincard(props) {
   return (
@@ -12,6 +13,8 @@ function Maincard(props) {
       height="268px"
       p={3}
       border="1px solid #DADAD7"
+      transition="all 0.3s ease"
+      _hover={{fontWeight:"300",boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px" , transform: "translateY(-5px)", cursor:"pointer" }}
     >
       <Box>
         <Flex justify="space-between">

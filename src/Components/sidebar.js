@@ -1,23 +1,37 @@
 "use client";
-import {
-  Box,
-  Button,
-  Flex,
-  Text,
-  Wrap,
-  WrapItem,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Text, Wrap, WrapItem } from "@chakra-ui/react";
 import { Avatar } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import Sidebarlinks from "./Sidebarlinks";
 import WorkspacesDropdown from "./WorkspacesDropdown";
 import LaunchpadDropdown from "./LaunchpadDropdown";
 import PinnedProjects from "./PinnedProjects";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Sidebar() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
   const toggleSidebar = () => setIsSidebarVisible(!isSidebarVisible);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 758) {
+        setIsSidebarVisible(true); 
+      } else {
+        setIsSidebarVisible(false); // Sidebar collapses for smaller screens
+      }
+    };
+
+    // Check on component mount
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -30,7 +44,7 @@ function Sidebar() {
         backgroundColor="#F4F6FA"
         color="white"
         zIndex="1000"
-        alignItems="center" 
+        alignItems="center"
         transition="left 0.3s"
         p={4}
         justifyContent="space-between"
@@ -39,13 +53,13 @@ function Sidebar() {
           <img src="/images/mudirrlogo.png" alt="Logo" />
         </Box>
         <Button onClick={toggleSidebar} backgroundColor="white" color="#5876B7">
-          {isSidebarVisible ? "Close" : "Open"} 
+          {isSidebarVisible ? "Close" : "Open"}
         </Button>
       </Box>
 
       <Box
         position="fixed"
-        left={isSidebarVisible ? 0 : "-300px"} 
+        left={isSidebarVisible ? 0 : "-300px"}
         top={0}
         height="100vh"
         width="300px"
@@ -59,7 +73,7 @@ function Sidebar() {
             width: "270px",
           },
           "@media (max-width: 650px)": {
-            left: isSidebarVisible ? "0" : "-300px",  
+            left: isSidebarVisible ? "0" : "-300px",
           },
         }}
       >
@@ -177,7 +191,11 @@ function Sidebar() {
               <Box mr="10px">
                 <img src="/images/vector.png" alt="logo" boxSize="20px" />
               </Box>
-              <Text  _hover={{ color: "black", cursor: "pointer" }} color="#3C3C34" fontSize="14px">
+              <Text
+                _hover={{ color: "black", cursor: "pointer" }}
+                color="#3C3C34"
+                fontSize="14px"
+              >
                 Account Settings
               </Text>
             </Flex>
@@ -187,7 +205,11 @@ function Sidebar() {
               <Box mr="10px">
                 <img src="/images/vector.png" alt="logo" boxSize="20px" />
               </Box>
-              <Text  _hover={{ color: "black", cursor: "pointer" }} color="#3C3C34" fontSize="14px">
+              <Text
+                _hover={{ color: "black", cursor: "pointer" }}
+                color="#3C3C34"
+                fontSize="14px"
+              >
                 Logout
               </Text>
             </Flex>
