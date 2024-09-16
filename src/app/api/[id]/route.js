@@ -37,9 +37,12 @@ export async function DELETE(request, { params }) {
       });
     }
 
+    console.log("Deleted successfully");
+
     return new Response({ message: "deleted sucessfully" });
   } catch (error) {
-    response.json({
+    console.log("error", error);
+    return new Response({
       data: [],
       status: false,
       message: error.message,
