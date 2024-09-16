@@ -1,10 +1,10 @@
-import mongoose from "mongoose";
+import mongoose, { model, models, Schema } from "mongoose";
 
-const projectschema = mongoose.schema(
+const projectschema = new Schema(
   {
     heading: {
       type: String,
-      required: [true, "Please enter prod name"],
+      required: true,
     },
 
     status: {
@@ -23,5 +23,5 @@ const projectschema = mongoose.schema(
   }
 );
 
-const Project = mongoose.model("Project", projectschema);
-export default Project;
+// const Project = mongoose.model("Project", projectschema);
+export default models.Project || model("Project", projectschema)
