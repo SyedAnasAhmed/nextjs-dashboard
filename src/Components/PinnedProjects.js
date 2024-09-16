@@ -16,6 +16,7 @@ function PinnedProjects() {
   const toggleShowAll = () => setShowAll(!showAll);
 
   return (
+    <>
     <Box>
       <Box mt={2} ml={2}>
         <Flex
@@ -59,6 +60,7 @@ function PinnedProjects() {
         <Divider borderColor="#DADAD7" />
       </Box>
     </Box>
+    </>
   );
 }
 

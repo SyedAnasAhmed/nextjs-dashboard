@@ -7,6 +7,7 @@ import { easeInOut } from "framer-motion";
 
 function Maincard(props) {
   return (
+    <>
     <Box
       width="364px"
       w={{ base: "300px" }}
@@ -76,6 +77,7 @@ function Maincard(props) {
         </Flex>
       </Box>
     </Box>
+    </>
   );
 }
 export default Maincard;

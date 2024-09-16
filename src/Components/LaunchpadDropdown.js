@@ -24,6 +24,7 @@ function LaunchpadDropdown() {
   const toggleShowAll = () => setShowAll(!showAll);
 
   return (
+    <>
     <Box>
       <Box mt={2} ml={2}>
         <Flex
@@ -77,6 +78,7 @@ function LaunchpadDropdown() {
         </Collapse>
       </Box>
     </Box>
+    </>
   );
 }
 

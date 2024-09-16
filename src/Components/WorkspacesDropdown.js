@@ -18,6 +18,7 @@ function WorkspacesDropdown() {
   const toggleShowAll = () => setShowAll(!showAll);
 
   return (
+    <>
     <Box>
       <Box mt={2} ml={2}>
         <Flex
@@ -87,7 +88,9 @@ function WorkspacesDropdown() {
         <Divider borderColor="#DADAD7" />
       </Box>
     </Box>
+    </>
   );
+
 }
 
 export default WorkspacesDropdown;

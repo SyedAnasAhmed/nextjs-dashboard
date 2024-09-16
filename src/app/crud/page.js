@@ -1,9 +1,9 @@
 "use client";
 import Maincard from "@/Components/maincard";
-import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, ChakraProvider, Flex, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 
-const page = ({project}) => {
+const page = ({ project }) => {
   const [data, setdata] = useState([]);
 
   async function fetchdata() {
@@ -41,32 +41,40 @@ const page = ({project}) => {
   //   deleteProj(id);
   // }
 
-
   return (
     <>
-      <Box mt={5} ml={10}>
-        <Flex justifyContent={"space-around"} alignItems={"center"}>
-          <Text className="bold">
-            Hello! This is the backend part of the full-stack task!
-          </Text>
-          <Button>Create a Project(Not functional)</Button>
-        </Flex>
-      </Box>
-      <Box mt={10} ml={"50px"}>
-        <Flex flexWrap={"wrap"} gap={10} justifyContent={"flex-start"}>
-          {data.map((item) => (
-            <Box width="400px" height="200px" border="1px solid lightgray" p={5} >
-                <Text className="light" fontSize="12px" color="lightgray" >ID:{item._id}</Text>
-                <Text className="bold" fontSize="16px">Heading of the project:{item.heading}</Text>
+      <ChakraProvider>
+        <Box mt={5} ml={10}>
+          <Flex justifyContent={"space-around"} alignItems={"center"}>
+            <Text className="bold">
+              Hello! This is the backend part of the full-stack task!
+            </Text>
+            <Button>Create a Project(Not functional)</Button>
+          </Flex>
+        </Box>
+        <Box mt={10} ml={"50px"}>
+          <Flex flexWrap={"wrap"} gap={10} justifyContent={"flex-start"}>
+            {data.map((item, index) => (
+              <Box
+                width="400px"
+                height="200px"
+                border="1px solid lightgray"
+                p={5}
+                key={index}
+              >
+                <Text className="light" fontSize="12px" color="lightgray">
+                  ID:{item._id}
+                </Text>
+                <Text className="bold" fontSize="16px">
+                  Heading of the project:{item.heading}
+                </Text>
                 <Text className="light">Project Status:{item.status}</Text>
                 <Text className="light">Milestone/Date:{item.milestone}</Text>
-                {/* <Button bgColor={"#DF1B1B"} color={"white"}
-                  onClick={handleDelete}
-                >Delete This Project</Button> */}
-            </Box>
-          ))}
-        </Flex>
-      </Box>
+              </Box>
+            ))}
+          </Flex>
+        </Box>
+      </ChakraProvider>
     </>
   );
 };

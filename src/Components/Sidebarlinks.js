@@ -3,6 +3,7 @@ import React from "react";
 
 function Sidebarlinks() {
   return (
+    <>
     <Box>
       <Box
         width="256px"
@@ -73,6 +74,7 @@ function Sidebarlinks() {
         <Divider borderColor="#DADAD7" />
       </Box>
     </Box>
+    </>
   );
 }
 
