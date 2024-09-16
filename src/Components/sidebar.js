@@ -103,7 +103,7 @@ function Sidebar() {
               </Text>
             </Box>
             <Box mt={3}>
-              <ChevronDownIcon color="black" boxSize={6} />
+              <ChevronDownIcon color="black" boxsize={6} />
             </Box>
           </WrapItem>
         </Wrap>
@@ -189,7 +189,7 @@ function Sidebar() {
           <Box mt={2}>
             <Flex justifyContent="flex-start" alignItems="center" ml={5}>
               <Box mr="10px">
-                <img src="/images/vector.png" alt="logo" boxSize="20px" />
+                <img src="/images/vector.png" alt="logo" boxsize="20px" />
               </Box>
               <Text
                 _hover={{ color: "black", cursor: "pointer" }}
@@ -203,7 +203,7 @@ function Sidebar() {
           <Box mt={2}>
             <Flex justifyContent="flex-start" alignItems="center" ml={5}>
               <Box mr="10px">
-                <img src="/images/vector.png" alt="logo" boxSize="20px" />
+                <img src="/images/vector.png" alt="logo" boxsize="20px" />
               </Box>
               <Text
                 _hover={{ color: "black", cursor: "pointer" }}

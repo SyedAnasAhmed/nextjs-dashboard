@@ -26,9 +26,9 @@ function PinnedProjects() {
           onClick={toggleExpand}
         >
           {isExpanded ? (
-            <ChevronUpIcon color="#707066" boxSize={6} />
+            <ChevronUpIcon color="#707066" boxsize={6} />
           ) : (
-            <ChevronDownIcon color="#707066" boxSize={6} />
+            <ChevronDownIcon color="#707066" boxsize={6} />
           )}
           <Text color="#707066" className="normal" fontSize="14px" ml={2}>
             PINNED PROJECTS (3/3)
@@ -44,7 +44,7 @@ function PinnedProjects() {
                     <img
                       src="/images/vector.png"
                       alt="logo"
-                      boxSize="20px"
+                      boxsize="20px"
                     />
                   </Box>
                   <Text color="#3C3C34" fontSize="14px">

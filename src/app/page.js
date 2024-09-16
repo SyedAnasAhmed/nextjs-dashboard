@@ -1,10 +1,10 @@
 "use client";
 
 import "../app/globals.css";
-import Sidebar from "@/Components/sidebar";
-import Maincard from "@/Components/maincard";
+import Sidebar from "@/Components/Sidebar";
+import Maincard from "@/Components/Maincard";
 import { Box, ChakraProvider, Flex, Text } from "@chakra-ui/react";
-import Folder_status from "@/Components/folder-status";
+import Folder_status from "@/Components/Folder-status";
 import Projstatus from "@/Components/Projstatus";
 import Footer from "@/Components/Footer";
 

@@ -28,9 +28,9 @@ function WorkspacesDropdown() {
           onClick={toggleExpand}
         >
           {isExpanded ? (
-            <ChevronUpIcon color="#707066" boxSize={6} />
+            <ChevronUpIcon color="#707066" boxsize={6} />
           ) : (
-            <ChevronDownIcon color="#707066" boxSize={6} />
+            <ChevronDownIcon color="#707066" boxsize={6} />
           )}
           <Box>
             <Flex flexDirection={"row"} alignItems={"center"} justifyContent={"space-evenly"} gap={2} >
@@ -54,7 +54,7 @@ function WorkspacesDropdown() {
           {workspaces
             .slice(0, showAll ? workspaces.length : 3)
             .map((workspace, index) => (
-              <Box>
+              <Box key={index} >
                 <Flex justifyContent={"space-around"} alignItems={"center"}>
                   <Text
                     key={index}

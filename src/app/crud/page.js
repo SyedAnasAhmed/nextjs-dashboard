@@ -1,5 +1,5 @@
 "use client";
-import Maincard from "@/Components/maincard";
+import Maincard from "@/Components/Maincard";
 import { Box, Button, ChakraProvider, Flex, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 
